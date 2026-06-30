@@ -751,6 +751,14 @@ function PrincipleExplorerInteraction({ section, onComplete, soundOn }) {
       <MindsetVisual />
 
       <div className="principle-workbench">
+        <label className="principle-mobile-select">
+          <span>Choose a principle</span>
+          <select value={activeIndex} onChange={(event) => selectPrinciple(Number(event.target.value))}>
+            {section.cards.map((card, index) => (
+              <option value={index} key={card.title}>{card.title}</option>
+            ))}
+          </select>
+        </label>
         <div className="principle-picker" aria-label="Project management principles">
           {section.cards.map((card, index) => {
             const meta = principleMeta[index] || principleMeta[0];
