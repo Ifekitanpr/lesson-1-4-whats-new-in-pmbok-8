@@ -2541,11 +2541,35 @@ button:disabled {
   }
 
   .principle-detail {
-    padding: 18px 84px 18px 18px;
+    overflow: hidden;
+    padding: 18px;
   }
 
   .principle-detail-head {
     display: block;
+    padding-right: 0;
+  }
+
+  .principle-detail-icon {
+    top: 12px;
+    right: 12px;
+    width: 72px;
+    height: 72px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .principle-detail-icon svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  .principle-detail h3,
+  .principle-detail p,
+  .principle-detail .exam-lens,
+  .principle-next-row {
+    position: relative;
+    z-index: 1;
   }
 
   .principle-next-row {
