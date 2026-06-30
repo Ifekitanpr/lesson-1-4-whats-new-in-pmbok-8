@@ -2428,7 +2428,7 @@ button:disabled {
   .lesson-card {
     width: calc(100vw - 44px);
     max-width: calc(100vw - 44px);
-    padding: 24px 16px;
+    padding: 22px 14px;
   }
 
   .lesson-card,
@@ -2444,7 +2444,52 @@ button:disabled {
   }
 
   .hero-copy h1 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 1.12;
+  }
+
+  .hero-copy > p:not(.eyebrow):not(.lesson-pill) {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .activity-instruction,
+  .learning-panel-head p,
+  .choice-card small,
+  .grid-learn-card small,
+  .read-checks label,
+  .interaction-status > span {
+    font-size: 12px;
+  }
+
+  .learning-panel-head h3,
+  .choice-card strong,
+  .grid-learn-card strong {
+    font-size: 15px;
+  }
+
+  .learning-card {
+    min-height: 138px;
+    padding: 16px 76px 48px 16px;
+  }
+
+  .learning-icon {
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .learning-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .primary-action,
+  .secondary-action {
+    font-size: 14px;
   }
 
   .domain-wheel {
@@ -2465,7 +2510,7 @@ button:disabled {
 
   .module-list button {
     grid-template-columns: 46px minmax(0, 1fr);
-    min-height: 86px;
+    min-height: 78px;
     padding: 14px;
   }
 
@@ -2475,7 +2520,7 @@ button:disabled {
   }
 
   .module-detail {
-    padding: 26px 18px;
+    padding: 22px 16px;
   }
 
   .module-detail-icon {
@@ -2486,49 +2531,73 @@ button:disabled {
   }
 
   .module-detail h3 {
-    max-width: calc(100% - 74px);
-    font-size: 28px;
+    max-width: calc(100% - 58px);
+    font-size: 23px;
+    line-height: 1.14;
   }
 
   .module-detail > p:not(.mini-label) {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .module-bullet-list > div,
   .module-mini-cards > div {
-    padding: 15px;
+    padding: 13px;
+    font-size: 14px;
   }
 
   .flip-card-3d-button,
   .flip-card-3d,
   .flip-face {
-    min-height: 430px;
+    min-height: 400px;
   }
 
   .flip-face {
-    padding: 24px;
+    justify-content: flex-start;
+    padding: 22px 18px;
   }
 
   .flip-orbit {
-    top: 18px;
-    right: 18px;
-    width: 52px;
-    height: 52px;
+    top: 14px;
+    right: 14px;
+    width: 46px;
+    height: 46px;
+    opacity: 0.16;
+    transform: translateZ(18px);
+  }
+
+  .flip-orbit svg {
+    width: 24px;
+    height: 24px;
   }
 
   .flip-face strong,
   .flip-preview,
   .flip-face small {
-    max-width: calc(100% - 68px);
+    max-width: 100%;
   }
 
   .flip-face strong {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.22;
+  }
+
+  .flip-preview {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .flip-face small {
     max-width: 100%;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .flip-kicker,
+  .flip-face em {
+    font-size: 12px;
   }
 
   .flip-actions {
@@ -2542,7 +2611,7 @@ button:disabled {
 
   .principle-detail {
     overflow: hidden;
-    padding: 18px;
+    padding: 16px;
   }
 
   .principle-detail-head {
@@ -2570,6 +2639,15 @@ button:disabled {
   .principle-next-row {
     position: relative;
     z-index: 1;
+  }
+
+  .principle-detail h3 {
+    font-size: 22px;
+  }
+
+  .principle-detail p {
+    font-size: 14px;
+    line-height: 1.58;
   }
 
   .principle-next-row {
@@ -2610,11 +2688,13 @@ button:disabled {
   }
 
   .slide-modal h3 {
-    font-size: 25px;
+    font-size: 22px;
+    line-height: 1.18;
   }
 
   .slide-modal > p:not(.mini-label) {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .slide-modal .drawer-close {
