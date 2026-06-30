@@ -2498,6 +2498,36 @@ button:disabled {
 
   .intro-block {
     grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .intro-block-icon {
+    top: 12px;
+    right: 12px;
+    width: 68px;
+    height: 68px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .intro-block-icon svg {
+    width: 68px;
+    height: 68px;
+  }
+
+  .intro-block h3,
+  .intro-block ul {
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro-block h3 {
+    font-size: 21px;
+  }
+
+  .intro-block li {
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .timeline-rail {
