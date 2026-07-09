@@ -321,6 +321,15 @@ const lessonList = [
   "Updated Terminology",
 ];
 
+const sectionGroups = [
+  { label: "Overview", start: 0 },
+  { label: "Principles", start: 2 },
+  { label: "Domains", start: 3 },
+  { label: "Processes", start: 4 },
+  { label: "Focus Areas", start: 5 },
+  { label: "Terminology", start: 6 },
+];
+
 function ProgressDot({ state = "idle" }) {
   return (
     <span className={`progress-dot ${state}`} aria-hidden="true">
@@ -610,6 +619,39 @@ function SlideModal({ item, onClose, soundOn }) {
         </button>
       </motion.aside>
     </motion.div>
+  );
+}
+
+function SectionTabs({ groups, totalSections, activeIndex, completed, isReachable, onSelect }) {
+  const boundaries = groups.map((group, index) => ({
+    ...group,
+    end: index + 1 < groups.length ? groups[index + 1].start - 1 : totalSections - 1,
+  }));
+  const activeGroupIndex = boundaries.findIndex((group) => activeIndex >= group.start && activeIndex <= group.end);
+
+  return (
+    <nav className="section-tabs" aria-label="Lesson sections">
+      <p className="section-tabs-count">Section {activeGroupIndex + 1} of {boundaries.length}</p>
+      <div className="section-tabs-row">
+        {boundaries.map((group, index) => {
+          const done = completed.slice(group.start, group.end + 1).every(Boolean);
+          const isActive = index === activeGroupIndex;
+          const reachable = isReachable(group.start);
+          return (
+            <button
+              key={group.label}
+              type="button"
+              className={`section-tab ${isActive ? "active" : done ? "done" : "locked"}`}
+              onClick={() => reachable && onSelect(group.start)}
+              disabled={!reachable}
+            >
+              {done && !isActive ? <Check size={14} /> : null}
+              <span>{group.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </nav>
   );
 }
 
@@ -1218,6 +1260,15 @@ function App() {
                   </div>
                 )}
               </div>
+
+              <SectionTabs
+                groups={sectionGroups}
+                totalSections={sections.length}
+                activeIndex={activeIndex}
+                completed={completed}
+                isReachable={(index) => index <= unlockedLimit}
+                onSelect={selectSection}
+              />
 
               <AnimatePresence mode="wait">
                 <LessonSection
